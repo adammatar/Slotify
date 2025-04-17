@@ -1,77 +1,114 @@
-# Slotify
+# Slotify - Appointment Booking Platform
 
-A full-stack appointment booking platform designed for both business owners and clients.
+Slotify is a modern, full-stack appointment booking platform that connects businesses with clients. Built with Next.js, TypeScript, and Prisma, it provides a seamless experience for both business owners and their clients.
 
-## Project Structure
+## Features
 
-```
-slotify/
-├── packages/
-│   ├── web/          # Next.js frontend application
-│   └── api/          # NestJS backend application
-├── package.json      # Root package.json
-└── turbo.json        # Turborepo configuration
-```
+### For Businesses
+- Create and manage your business profile
+- Set up service offerings and availability
+- Handle appointment bookings and cancellations
+- Manage client relationships
+- View booking analytics
+
+### For Clients
+- Search and discover local businesses
+- Book appointments online
+- Manage your appointments
+- Save favorite businesses
+- Receive booking notifications
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, TypeScript, Tailwind CSS, Headless UI
+- **Backend**: Next.js API Routes
+- **Database**: PostgreSQL with Prisma ORM
+- **Authentication**: NextAuth.js
+- **File Storage**: Local file system with API routes
+- **Real-time Updates**: WebSocket support
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js >= 18.0.0
-- pnpm (recommended) or npm
-- PostgreSQL (for development)
+- Node.js 18+ 
+- PostgreSQL
+- npm or yarn
 
 ### Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/slotify.git
-cd slotify
+git clone https://github.com/adammatar/Slotify.git
+cd Slotify
 ```
 
 2. Install dependencies:
 ```bash
-pnpm install
+# Install root dependencies
+npm install
+
+# Install API dependencies
+cd packages/api
+npm install
+
+# Install web dependencies
+cd ../web
+npm install
 ```
 
 3. Set up environment variables:
 ```bash
-cp packages/web/.env.example packages/web/.env.local
-cp packages/api/.env.example packages/api/.env
+# In packages/api
+cp .env.example .env
+
+# In packages/web
+cp .env.example .env
 ```
 
-4. Start the development servers:
+4. Set up the database:
 ```bash
-pnpm dev
+cd packages/web
+npx prisma migrate dev
 ```
 
-This will start both the frontend and backend servers in development mode.
+5. Start the development servers:
+```bash
+# Start API server
+cd packages/api
+npm run dev
 
-## Development
+# Start web server
+cd ../web
+npm run dev
+```
 
-- Frontend: http://localhost:3000
-- Backend: http://localhost:4000
+## Project Structure
 
-## Tech Stack
-
-- **Frontend**: Next.js, Tailwind CSS, TypeScript
-- **Backend**: NestJS, PostgreSQL, Prisma
-- **Authentication**: NextAuth.js
-- **Deployment**: Vercel (frontend), Railway (backend)
-
-## Features
-
-- Business owner registration and management
-- Client booking system
-- Real-time availability
-- Email notifications
-- Admin dashboard
-- Mobile-first design
+```
+Slotify/
+├── packages/
+│   ├── api/          # Backend API
+│   └── web/          # Frontend application
+├── .gitignore
+├── package.json
+└── README.md
+```
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+Adam Matar - [@adammatar](https://github.com/adammatar)
+
+Project Link: [https://github.com/adammatar/Slotify](https://github.com/adammatar/Slotify) 
